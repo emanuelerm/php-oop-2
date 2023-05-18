@@ -7,7 +7,7 @@ class Product
     public
     $name, $image, $expire, $category, $type;
 
-    public function __construct(string $name, string $image, int $expire, Category $category, Type $type)
+    public function __construct(string $name, string $image, mixed $expire, Category $category, Type $type)
     {
         $this->name = $name;
         $this->image = $image;

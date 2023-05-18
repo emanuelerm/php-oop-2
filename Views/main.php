@@ -15,9 +15,9 @@ include __DIR__ . '/../Database/db.php';
                     </div>
                     <div class="card-body">
                         <h3><?= $product->name ?></h3>
-                        <p><?= $product->expire ?></p>
-                        <h4><?= $product->$category ?></h4>
-                        <h5><?= $product->$type ?></h5>
+                        <p>Expire date: <?= $product->expire ?></p>
+                        <h4><i class="<?= $product->category->name ?>"></i></h4>
+                        <h5><?= $product->type->name ?></h5>
                     </div>
                 </div>
             </div>
