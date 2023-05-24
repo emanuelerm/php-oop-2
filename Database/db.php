@@ -1,12 +1,18 @@
 <?php
 
-include __DIR__ . '/../Models/Product.php';
+include_once __DIR__ . '/../Models/Food.php';
+include_once __DIR__ . '/../Models/Toy.php';
 
-$products = 
-[
-    $product1 = new Product('cuccia bijoux', 'https://www.tradeshopitalia.com/134563-large_default/cuccia-per-gatti-universale-a-meta-chiuso-con-morbido-cuscino-interno-tgm.jpg', '/', new Category('fa-solid fa-cat'), new Type('cucce')),
-    $product2 = new Product('cuccia fufi', 'https://www.duepuntootto.com/454-large_default/henri-cuccia-cotone.jpg', '/', new Category('fa-solid fa-dog'), new Type('cucce')),
-    $product3 = new Product('croccette junior', 'https://static.zoomalia.com/prod_img/41733/lm_153b3e3e393c77e35a4a3f3cbd1e429b5dc1521128734.jpg', '2025', new Category('fa-solid fa-dog'), new Type('cibo')),
-    $product4 = new Product('mouse', 'https://i.ebayimg.com/images/g/djAAAOSw245jZh~0/s-l500.png', '/', new Category('fa-solid fa-cat'), new Type('giochi')),
-    $product5 = new Product('deer bone', 'https://static.zoomalia.com/prod_img/34858/la_98ed3d2c21991e3bef5e069713af9fa6ca1617356340.jpg', '2030', new Category('fa-solid fa-dog'), new Type('giochi')),
+$dog = new Category('Dog', 'fa-solid fa-dog');
+$cat = new Category('Cat', 'fa-solid fa-cat');
+
+$product = new Product('Cuccia', 50, 'https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQfuFjv358ewiG_V8sSKdYK0yZ_TfC-QXfD9x2LVvqRcEjAB6SEKnUoyP2rdGKHqt_OH3LHp3-pT8EfG7SM7vqTg325EvZiABp1TnhaMOAws60rzAUF7dKSbw&usqp=CAE', 'PetEasy', $dog);
+
+$food = new Food('Crocchette', 20, 'https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcS5MAKhNoOd79qYV0PEWRfUlJarD2abxVZ21M_N-CzQi7TCOraJ97n_32fWcE8KmoSR2JOYYljRj_1egEmIwiQVMaedFLGBlDx_X77OIWK5xPBJ3hwInkMX3g&usqp=CAE', 'Hills', $cat, 'Secco', 'Domani', 'Pollo', 1, 'kg');
+
+$toy = new Toy('Pallina', 5, 'https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcSGeKfHOivpUe8rc8uuFrI9oQ1VlSKnkwR7gOMlTdhWA4NzXUfXaa2JGe_tQyp483fXbPyzk9CEw5fVt9977G8p2r02sUsgrK4221vBHish_m07o9Pv2Pxcsw&usqp=CAE', 'Toys', $dog, 'Palla');
+
+
+$products = [
+    $product, $food, $toy
 ];

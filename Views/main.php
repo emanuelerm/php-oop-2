@@ -1,6 +1,6 @@
 <?php
 
-include __DIR__ . '/../Database/db.php';
+include_once __DIR__ . '/../Database/db.php';
 
 ?>
 <main>
@@ -14,10 +14,18 @@ include __DIR__ . '/../Database/db.php';
                         <img src="<?= $product->image ?>" alt="<?= $product->name ?>">
                     </div>
                     <div class="card-body">
+                        <h1><?= $product->category->name ?></h1>
                         <h3><?= $product->name ?></h3>
-                        <p>Expire date: <?= $product->expire ?></p>
-                        <h4><i class="<?= $product->category->name ?>"></i></h4>
-                        <h5><?= $product->type->name ?></h5>
+                        <p><i class="<?= $product->category->icon ?>"></i></p>
+                        <?php  if(is_a($product, 'Toy')) { ?>
+                        <p><strong>Tipo: </strong><?= $product->type ?></p>
+                        <?php } ?>
+                        <?php  if(is_a($product, 'Food')) { ?>
+                        <p><strong>Ingredienti: </strong><?= $product->taste ?></p>
+                        <?php } ?>
+                        <?php  if(property_exists($product, 'weight')) { ?>
+                        <h5>Prezzo: <?php echo $product->getWeight() ?></h5>
+                        <?php } ?>
                     </div>
                 </div>
             </div>

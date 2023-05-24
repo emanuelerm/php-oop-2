@@ -2,9 +2,11 @@
 
 class Category
 {
-    public $name;
+    public 
+    $name, $icon;
 
-    public function __construct(string $name){
+    public function __construct(string $name, string $icon){
         $this->name = $name;
+        $this->icon = $icon;
     }
 }
